@@ -28,6 +28,7 @@
     tmux
     unzip
     vim
+    which
     zip
   ];
 
