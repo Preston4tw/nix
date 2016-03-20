@@ -25,12 +25,19 @@
   environment.systemPackages = with pkgs; [
     chromium
     git
+    lsof
+    strace
+    tcpdump
     tmux
     unzip
+    vagrant
     vim
     which
     zip
   ];
+
+  # Install VirtualBox
+  virtualisation.virtualbox.host.enable = true;
 
   # List services that you want to enable:
 
@@ -49,7 +56,7 @@
   users.extraUsers.preston = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "vboxusers" ];
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
